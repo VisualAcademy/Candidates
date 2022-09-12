@@ -222,7 +222,52 @@ namespace VisualAcademy.Areas.Identity.Pages.Account.Manage
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber,
-                FirstName = user.FirstName
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = user.Address,
+                Age = user.Age,
+                AliasNames = user.AliasNames,
+                BirthCity = user.BirthCity,
+                BirthCountry = user.BirthCountry,
+                BirthCounty = user.BirthCounty,
+                BirthPlace = user.BirthPlace,
+                BirthState = user.BirthState,
+                BusinessStructure = user.BusinessStructure,
+                BusinessStructureOther = user.BusinessStructureOther,
+                City = user.City,
+                County = user.County,
+                DOB = user.DOB,
+                DriverLicenseExpiration = user.DriverLicenseExpiration,
+                DriverLicenseNumber = user.DriverLicenseNumber,
+                DriverLicenseState = user.DriverLicenseState,
+                EyeColor = user.EyeColor,
+                Gender = user.Gender,
+                HairColor = user.HairColor,
+                Height = user.Height,
+                HeightFeet = user.HeightFeet,
+                HeightInches = user.HeightInches,
+                HomePhone = user.HomePhone,
+                LicenseNumber = user.LicenseNumber,
+                MaritalStatus = user.MaritalStatus,
+                MiddleName = user.MiddleName,
+                MobilePhone = user.MobilePhone,
+                NameSuffix = user.NameSuffix,
+                OfficeAddress = user.OfficeAddress,
+                OfficeCity = user.OfficeCity,
+                OfficeState = user.OfficeState,
+                PersonalEmail = user.PersonalEmail,
+                Photo = user.Photo,
+                PhysicalMarks = user.PhysicalMarks,
+                PostalCode = user.PostalCode,
+                PrimaryPhone = user.PrimaryPhone,
+                SecondaryPhone = user.SecondaryPhone,
+                SSN = user.SSN,
+                State = user.State,
+                Timezone = user.Timezone,
+                UsCitizen = user.UsCitizen,
+                Weight = user.Weight,
+                WorkFax = user.WorkFax,
+                WorkPhone = user.WorkPhone                
             };
         }
 
@@ -267,7 +312,54 @@ namespace VisualAcademy.Areas.Identity.Pages.Account.Manage
             if (Input.FirstName is not null)
             {
                 user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                user.Address = Input.Address;
+                user.Age = Input.Age;
+                user.AliasNames = Input.AliasNames;
+                user.BirthCity = Input.BirthCity;
+                user.BirthCountry = Input.BirthCountry;
+                user.BirthCounty = Input.BirthCounty;
+                user.BirthPlace = Input.BirthPlace;
+                user.BirthState = Input.BirthState;
+                user.BusinessStructure = Input.BusinessStructure;
+                user.BusinessStructureOther = Input.BusinessStructureOther;
+                user.City = Input.City;
+                user.County = Input.County;
+                user.DOB = Input.DOB;
+                user.DriverLicenseExpiration = Input.DriverLicenseExpiration;
+                user.DriverLicenseNumber = Input.DriverLicenseNumber;
+                user.DriverLicenseState = Input.DriverLicenseState;
+                user.EyeColor = Input.EyeColor;
+                user.Gender = Input.Gender;
+                user.HairColor = Input.HairColor;
+                user.Height = Input.Height;
+                user.HeightFeet = Input.HeightFeet;
+                user.HeightInches = Input.HeightInches;
+                user.HomePhone = Input.HomePhone;
+                user.LicenseNumber = Input.LicenseNumber;
+                user.MaritalStatus = Input.MaritalStatus;
+                user.MiddleName = Input.MiddleName;
+                user.MobilePhone = Input.MobilePhone;
+                user.NameSuffix = Input.NameSuffix;
+                user.OfficeAddress = Input.OfficeAddress;
+                user.OfficeCity = Input.OfficeCity;
+                user.OfficeState = Input.OfficeState;
+                user.PersonalEmail = Input.PersonalEmail;
+                user.PhoneNumber = Input.PhoneNumber;
+                user.Photo = Input.Photo;
+                user.PhysicalMarks = Input.PhysicalMarks;
+                user.PostalCode = Input.PostalCode;
+                user.PrimaryPhone = Input.PrimaryPhone;
+                user.SecondaryPhone = Input.SecondaryPhone;
+                user.SSN = Input.SSN;
+                user.State = Input.State;
+                user.Timezone = Input.Timezone;
+                user.UsCitizen = Input.UsCitizen;
+                user.Weight = Input.Weight;
+                user.WorkFax = Input.WorkFax;
+                user.WorkPhone = Input.WorkPhone;
             }
+
             await _userManager.UpdateAsync(user); // Update
 
             await _signInManager.RefreshSignInAsync(user);
