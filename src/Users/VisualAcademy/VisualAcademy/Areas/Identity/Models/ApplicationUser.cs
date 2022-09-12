@@ -5,11 +5,11 @@ namespace VisualAcademy.Areas.Identity.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Required]
+        //[Required]
         [StringLength(50)]
         public string? FirstName { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(50)]
         public string? LastName { get; set; }
 
