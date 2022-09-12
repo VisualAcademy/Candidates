@@ -1,0 +1,77 @@
+﻿CREATE TABLE [dbo].[AspNetUsers] (
+    [Id]                      NVARCHAR (450)     NOT NULL,
+    [UserName]                NVARCHAR (256)     NULL,
+    [NormalizedUserName]      NVARCHAR (256)     NULL,
+    [Email]                   NVARCHAR (256)     NULL,
+    [NormalizedEmail]         NVARCHAR (256)     NULL,
+    [EmailConfirmed]          BIT                NOT NULL,
+    [PasswordHash]            NVARCHAR (MAX)     NULL,
+    [SecurityStamp]           NVARCHAR (MAX)     NULL,
+    [ConcurrencyStamp]        NVARCHAR (MAX)     NULL,
+    [PhoneNumber]             NVARCHAR (MAX)     NULL,
+    [PhoneNumberConfirmed]    BIT                NOT NULL,
+    [TwoFactorEnabled]        BIT                NOT NULL,
+    [LockoutEnd]              DATETIMEOFFSET (7) NULL,
+    [LockoutEnabled]          BIT                NOT NULL,
+    [AccessFailedCount]       INT                NOT NULL,
+    [Address]                 NVARCHAR (70)      NULL,
+    [Age]                     INT                NULL,
+    [AliasNames]              NVARCHAR (MAX)     NULL,
+    [BirthCity]               NVARCHAR (70)      NULL,
+    [BirthCountry]            NVARCHAR (70)      NULL,
+    [BirthCounty]             NVARCHAR (MAX)     NULL,
+    [BirthPlace]              NVARCHAR (MAX)     NULL,
+    [BirthState]              NVARCHAR (2)       NULL,
+    [BusinessStructure]       NVARCHAR (MAX)     NULL,
+    [BusinessStructureOther]  NVARCHAR (MAX)     NULL,
+    [City]                    NVARCHAR (70)      NULL,
+    [ConcurrencyToken]        ROWVERSION         NULL,
+    [County]                  NVARCHAR (MAX)     NULL,
+    [DOB]                     NVARCHAR (MAX)     NULL,
+    [DriverLicenseExpiration] DATETIME2 (7)      NULL,
+    [DriverLicenseNumber]     NVARCHAR (35)      NULL,
+    [DriverLicenseState]      NVARCHAR (2)       NULL,
+    [EyeColor]                NVARCHAR (MAX)     NULL,
+    [FirstName]               NVARCHAR (50)      NULL,
+    [Gender]                  NVARCHAR (35)      NULL,
+    [HairColor]               NVARCHAR (MAX)     NULL,
+    [Height]                  NVARCHAR (MAX)     NULL,
+    [HeightFeet]              NVARCHAR (MAX)     NULL,
+    [HeightInches]            NVARCHAR (MAX)     NULL,
+    [HomePhone]               NVARCHAR (MAX)     NULL,
+    [IsEnrollment]            BIT                DEFAULT (CONVERT([bit],(0))) NOT NULL,
+    [LastName]                NVARCHAR (50)      NULL,
+    [LicenseNumber]           NVARCHAR (35)      NULL,
+    [MaritalStatus]           NVARCHAR (MAX)     NULL,
+    [MiddleName]              NVARCHAR (35)      NULL,
+    [MobilePhone]             NVARCHAR (MAX)     NULL,
+    [NameSuffix]              NVARCHAR (MAX)     NULL,
+    [OfficeAddress]           NVARCHAR (MAX)     NULL,
+    [OfficeCity]              NVARCHAR (MAX)     NULL,
+    [OfficeState]             NVARCHAR (MAX)     NULL,
+    [PersonalEmail]           NVARCHAR (254)     NULL,
+    [Photo]                   NVARCHAR (MAX)     NULL,
+    [PhysicalMarks]           NVARCHAR (MAX)     NULL,
+    [PostalCode]              NVARCHAR (35)      NULL,
+    [PrimaryPhone]            NVARCHAR (35)      NULL,
+    [SSN]                     NVARCHAR (MAX)     NULL,
+    [SecondaryPhone]          NVARCHAR (35)      NULL,
+    [State]                   NVARCHAR (2)       NULL,
+    [Timezone]                NVARCHAR (MAX)     NULL,
+    [UsCitizen]               NVARCHAR (MAX)     NULL,
+    [Weight]                  NVARCHAR (MAX)     NULL,
+    [WorkFax]                 NVARCHAR (MAX)     NULL,
+    [WorkPhone]               NVARCHAR (MAX)     NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [EmailIndex]
+    ON [dbo].[AspNetUsers]([NormalizedEmail] ASC);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UserNameIndex]
+    ON [dbo].[AspNetUsers]([NormalizedUserName] ASC) WHERE ([NormalizedUserName] IS NOT NULL);
+
