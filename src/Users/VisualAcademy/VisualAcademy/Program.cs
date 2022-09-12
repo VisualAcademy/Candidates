@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using VisualAcademy.Areas.Identity.Models;
+using VisualAcademy.Areas.Identity.Services;
 using VisualAcademy.Data;
 
 
@@ -18,6 +20,9 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => option
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddRazorPages();
+
+// 종속성 주입 추가 
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
